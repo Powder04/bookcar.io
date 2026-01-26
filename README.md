@@ -1,1 +1,2 @@
-# Vinfast-Limo-Green
+# UI Vinfast-Limo-Green
+## Authors: Luu Tran Nha Khue, Tran Thao My, Nguyen Ngoc Bao Han
