@@ -1,11 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi" data-theme="dark" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinfast Limo Green</title>
-</head>
-<body>
+    <title>VinFast Limo Green | Trải Nghiệm Thượng Lưu</title>
     
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#619111',
+                        accent: '#D2FD9C',
+                        gold: '#C5A059',
+                        'bg-dark': '#0a0d05',
+                    },
+                    fontFamily: {
+                        manrope: ['Manrope', 'sans-serif'],
+                        molish: ['Molish', 'Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        [data-theme="light"] { --bg: #fcfdf9; --text: #1a1d15; --card: rgba(0,0,0,0.02); }
+        [data-theme="dark"] { --bg: #0a0d05; --text: #f5f8ec; --card: rgba(255,255,255,0.03); }
+        
+        body { background-color: var(--bg); color: var(--text); font-family: 'Manrope', sans-serif; }
+
+        h1, h2 { letter-spacing: -0.04em; }
+        
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+
+        .btn-luxury {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .btn-luxury:hover { box-shadow: 0 0 30px rgba(97, 145, 17, 0.4); transform: translateY(-2px); }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(10,13,5,0.1) 0%, rgba(10,13,5,0.7) 50%, #0a0d05 100%);
+        }
+
+        .bento-card {
+            transition: all 0.4s ease;
+            border: 1px solid rgba(210, 253, 156, 0.05);
+        }
+        .bento-card:hover { border-color: rgba(97, 145, 17, 0.3); background: rgba(210, 253, 156, 0.02); }
+        
+        @font-face { font-family: 'Molish'; src: url('../fonts/Molish-Bold.ttf'); font-weight: 800; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5 py-5 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="font-molish font-extrabold text-2xl tracking-tighter uppercase">
+                VINFAST <span class="text-primary font-light">LIMO</span>
+            </a>
+            <div class="flex items-center gap-8">
+                <a href="tel:0909000000" class="hidden md:block font-semibold hover:text-primary transition-colors italic">Hotline: 0909.000.000</a>
+                <button id="themeToggle" class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary/10 transition-all text-primary">
+                    <i class="fa fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-end pb-32 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="../assets/ảnh 4.jpg" alt="VinFast Hero" class="w-full h-full object-cover scale-105">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="max-w-4xl">
+                <span class="inline-block px-4 py-1 border border-primary text-primary text-xs font-bold tracking-[0.2em] uppercase mb-6 rounded-full">Dịch vụ vận chuyển 5 sao</span>
+                <h1 class="font-molish font-extrabold text-5xl md:text-8xl text-white leading-[1.1] mb-8 uppercase">
+                    Định nghĩa <br> <span class="text-primary italic font-light tracking-normal lowercase">sự khác biệt.</span>
+                </h1>
+                <p class="text-white/60 text-lg md:text-xl font-light max-w-xl mb-10 leading-relaxed">
+                    Trải nghiệm hành trình êm ái, riêng tư tuyệt đối trên dòng xe điện cao cấp VinFast từ Cần Thơ đi khắp các tỉnh thành.
+                </p>
+                <div class="flex flex-wrap gap-6 items-center">
+                    <a href="tel:0909000000" class="btn-luxury bg-primary text-white px-10 py-5 rounded-sm font-extrabold tracking-widest uppercase text-sm shadow-xl">
+                        Đặt xe ngay
+                    </a>
+                    <a href="#services" class="group flex items-center gap-4 text-white font-bold tracking-widest uppercase text-xs">
+                        <span class="w-12 h-[1px] bg-primary transition-all group-hover:w-20"></span> Khám phá dịch vụ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 px-6">
+        <div class="container mx-auto">
+            <div class="mb-20">
+                <h2 class="text-primary font-bold text-sm tracking-[0.4em] uppercase mb-4 text-center md:text-left">Dịch vụ đặc quyền</h2>
+                <p class="text-4xl md:text-5xl font-extrabold font-molish tracking-tighter text-center md:text-left">HƠN CẢ MỘT CHUYẾN ĐI.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="md:col-span-8 bento-card bg-[var(--card)] p-12 rounded-3xl flex flex-col justify-between group min-h-[400px]">
+                    <div class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-2xl">
+                        <i class="fa fa-car-side text-2xl text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-molish font-bold text-3xl mb-4 group-hover:text-primary transition-colors uppercase">Xe riêng theo chuyến</h3>
+                        <p class="text-muted font-light max-w-md text-lg leading-relaxed">Chủ động hoàn toàn lộ trình, không chờ đợi, không ghép khách. Không gian lý tưởng để làm việc hoặc nghỉ ngơi thư giãn.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-4 bento-card bg-primary p-12 rounded-3xl flex flex-col justify-between text-white min-h-[400px]">
+                    <i class="fa fa-crown text-4xl text-accent"></i>
+                    <div>
+                        <h3 class="font-molish font-bold text-3xl mb-4 italic leading-tight uppercase">Limo Thương Gia</h3>
+                        <p class="text-white/80 font-light text-sm leading-relaxed text-justify">Trang bị ghế massage hiện đại, khăn lạnh, nước suối miễn phí cùng sự phục vụ chuyên nghiệp và tận tâm trên mọi cung đường.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-12 bento-card bg-[var(--card)] p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center gap-12 border-dashed border-primary/20">
+                    <div class="text-center md:text-left flex-1">
+                        <h3 class="font-molish font-bold text-3xl mb-4 tracking-tighter uppercase">Kết nối liên tỉnh</h3>
+                        <p class="text-muted font-light leading-relaxed text-lg">Mạng lưới vận chuyển phủ rộng từ Cần Thơ đến Sài Gòn và khắp các tỉnh Miền Tây bằng dòng xe điện VinFast xanh - sạch - sang.</p>
+                    </div>
+                    <div class="flex gap-12 border-l border-white/10 pl-12 hidden md:flex">
+                        <div class="text-center">
+                            <span class="block text-4xl font-bold text-primary">24/7</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">Hỗ trợ</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-4xl font-bold text-primary">100%</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-muted font-bold">Xe mới</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-20 px-6 border-t border-white/5">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <p class="font-molish font-extrabold text-3xl text-white tracking-tighter uppercase mb-2">VinFast Limo Green</p>
+                <p class="text-white/30 font-light tracking-[0.2em] text-[10px] uppercase italic">Cuộc cách mạng xanh trong vận tải cao cấp</p>
+            </div>
+            
+            <div class="flex gap-10 text-white/50 text-xs font-bold tracking-widest uppercase">
+                <a href="#" class="hover:text-primary transition-colors">Chính sách</a>
+                <a href="#" class="hover:text-primary transition-colors">Điều khoản</a>
+                <a href="tel:0909000000" class="text-primary underline underline-offset-8 transition-all italic">Hỗ trợ 24/7</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Logic Giao diện (Theme)
+        const toggle = document.getElementById("themeToggle");
+        const html = document.documentElement;
+
+        const setTheme = (theme) => {
+            html.setAttribute("data-theme", theme);
+            toggle.querySelector('i').className = theme === "dark" ? "fa fa-moon" : "fa fa-sun";
+            localStorage.setItem("theme", theme);
+        }
+
+        setTheme(localStorage.getItem("theme") || "dark");
+
+        toggle.addEventListener("click", () => {
+            setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+        });
+    </script>
 </body>
 </html>
