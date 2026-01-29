@@ -1,6 +1,6 @@
-/* ================= ROOT THEME ================= */
 :root {
     --bg: #000;
+    --card: rgba(255,255,255,0.05);
     --text-title: #fff;
     --text-sub: #9a9a9a;
     --primary: #609111;
@@ -11,6 +11,7 @@
 
 [data-theme="light"] {
     --bg: #ffffff;
+    --card: rgba(0,0,0,0.05);
     --text-title: #000;
     --text-sub: #555;
     --border: rgba(0,0,0,0.12);
@@ -19,8 +20,7 @@
 /* ================= BASE ================= */
 * {
     box-sizing: border-box;
-    /* Thêm transition mượt cho mọi thay đổi */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
 }
 
 body {
@@ -31,9 +31,22 @@ body {
     overflow-x: hidden;
 }
 
-img { display: block; max-width: 100%; }
+img {
+    display: block;
+    max-width: 100%;
+}
+
 .text-primary { color: var(--primary); }
 .text-sub { color: var(--text-sub); }
+
+/* ================= GLASS CONTAINER ================= */
+.header-flat,
+.footer-flat,
+.form-container-flat {
+    background: var(--card);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+}
 
 /* ================= SPOTLIGHT ================= */
 .spotlight {
@@ -48,146 +61,38 @@ img { display: block; max-width: 100%; }
     z-index: -1;
 }
 
-/* ================= HERO SPLIT & 3D EFFECTS ================= */
-.hero-split {
+[data-theme="light"] .spotlight {
+    background: radial-gradient(
+        600px circle at var(--x) var(--y),
+        rgba(96,145,17,0.08),
+        transparent 65%
+    );
+}
+
+/* ================= NAV ================= */
+.nav-link {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    min-height: 100vh;
-    overflow: hidden;
-    perspective: 1000px; /* Kích hoạt không gian 3D */
+    color: var(--text-title);
+    opacity: 0.85;
 }
 
-.hero-text {
-    position: absolute;
-    left: 6%;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 560px;
-    z-index: 5;
-    /* Hiệu ứng 3D nhẹ khi đứng yên */
-    transform-style: preserve-3d;
-}
-
-/* Hiệu ứng Hover cho Title - Uiverse Style */
-.hero-title {
-    font-size: clamp(3.5rem, 6vw, 6rem);
-    font-weight: 800;
-    line-height: 1.05;
-    margin-bottom: 28px;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.hero-title:hover {
-    transform: translateZ(20px);
-    text-shadow: 0 0 20px rgba(96,145,17,0.5);
-}
-
-.hero-title span { color: var(--primary); }
-
-/* ================= BUTTON CỰC CHÁY (SHINE & GLOW) ================= */
-.hero-btn {
-    display: inline-block;
-    padding: 18px 48px;
-    border-radius: 1.5rem;
-    background: linear-gradient(135deg, var(--primary), var(--dark-green));
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(57,68,8,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.hero-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(96,145,17,0.5);
-}
-
-/* Hiệu ứng tia chớp quét ngang qua nút giống Uiverse */
-.hero-btn::before {
+.nav-link::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: -100%;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width .3s ease;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+.nav-link:hover::after {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
-    transition: all 0.6s;
-}
-
-.hero-btn:hover::before {
-    left: 100%;
-}
-
-/* ================= FORM BOOKING CAO CẤP (GLASSMORPHISM) ================= */
-#booking {
-    position: relative;
-    z-index: 1;
-    background: var(--bg);
-}
-
-/* Tạo lớp kính mờ cho container chứa form nếu có */
-#booking .container {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border);
-    border-radius: 2rem;
-    padding: 40px;
-    transition: border-color 0.4s;
-}
-
-#booking .container:hover {
-    border-color: var(--primary);
-    box-shadow: 0 0 30px rgba(96,145,17,0.1);
-}
-
-/* Input Focus Glow - Đặc trưng Uiverse */
-input, textarea, select {
-    color: var(--text-title) !important; /* Đảm bảo thấy chữ */
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    outline: none;
-}
-
-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 15px rgba(96,145,17,0.2);
-    background: rgba(96,145,17,0.03);
-    transform: translateY(-2px);
-}
-
-/* ================= IMAGE SIDE ================= */
-.hero-image {
-    grid-column: 2 / 3;
-    position: relative;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8) contrast(1.1);
-}
-
-.hero-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-    background: linear-gradient(
-        to left,
-        rgba(0,0,0,0) 40%,
-        var(--bg) 100%
-    );
 }
 
 /* ================= THEME SWITCH ================= */
@@ -198,6 +103,7 @@ input:focus {
     border-radius: 50px;
     padding: 4px;
     cursor: pointer;
+    position: relative;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -206,21 +112,226 @@ input:focus {
     height: 22px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: grid;
+    place-items: center;
+    transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
-/* ================= RESPONSIVE ================= */
+.theme-switch-btn.light-active .theme-switch-circle {
+    transform: translateX(26px);
+}
+
+/* ================= HERO ================= */
+.hero-split {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.hero-text {
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 560px;
+    z-index: 5;
+}
+
+.uiverse-badge {
+    display: inline-block;
+    padding: .5rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #022c22;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 28px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero-title span {
+    color: var(--primary);
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    margin-bottom: 32px;
+}
+
+/* ================= BUTTON ================= */
+.hero-btn {
+    display: inline-block;
+    padding: 18px 48px;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--dark-green));
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(57,68,8,0.3);
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(96,145,17,0.5);
+}
+
+.hero-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+    transition: left .6s;
+}
+
+.hero-btn:hover::before {
+    left: 100%;
+}
+
+/* ================= HERO IMAGE ================= */
+.hero-image {
+    grid-column: 2 / 3;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) contrast(1.1);
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to left,
+        rgba(0,0,0,0) 40%,
+        var(--bg) 100%
+    );
+}
+
+/* ================= SERVICE CARD ================= */
+.service-card {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.service-card img {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 28px;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.service-content p {
+    color: var(--text-sub);
+    line-height: 1.6;
+}
+
+/* ================= FORM ================= */
+.form-container-flat {
+    border-radius: 2.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 20px 22px;
+    font-size: 1rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--text-title);
+    outline: none;
+}
+
+
+.services-zigzag {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.service-item {
+    display: flex;
+    width: 100%;
+}
+
+.service-item.left {
+    justify-content: flex-start;
+}
+
+.service-item.right {
+    justify-content: flex-end;
+}
+
+/* card dài ~2/3 màn hình */
+.service-item .service-card {
+    width: 66.66vw;
+    max-width: 1000px;
+    display: flex;
+    gap: 32px;
+    padding: 32px;
+}
+
+/* ảnh gọn lại */
+.service-item .service-card img {
+    width: 40%;
+    height: 260px;
+    border-radius: 1.8rem;
+    object-fit: cover;
+}
+
+/* content không dồn */
+.service-item .service-content {
+    padding: 0;
+}
+
+/* mobile */
 @media (max-width: 992px) {
-    .hero-split { grid-template-columns: 1fr; }
-    .hero-image::after {
-        background: linear-gradient(to bottom, var(--bg) 10%, transparent 100%);
+    .service-item {
+        justify-content: center !important;
     }
-    .hero-text {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        padding: 120px 24px;
-        text-align: center;
+
+    .service-item .service-card {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .service-item .service-card img {
+        width: 100%;
+        height: 240px;
     }
 }

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // THEME SWITCH
     const toggle = document.getElementById('themeToggle');
     const circle = document.getElementById('themeCircle');
     const html = document.documentElement;
@@ -19,19 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
         circle.textContent = theme === 'light' ? '☀️' : '🌙';
     }
 
-    // SPOTLIGHT
     window.addEventListener('mousemove', e => {
         document.documentElement.style.setProperty('--x', e.clientX + 'px');
         document.documentElement.style.setProperty('--y', e.clientY + 'px');
     });
 
-    // GSAP REVEAL
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('.reveal').forEach(el => {
+
+    // reveal từ trái
+    gsap.utils.toArray('.reveal-x-left').forEach(el => {
         gsap.from(el, {
-            y: 40,
+            x: -120,
             opacity: 0,
-            duration: 1,
+            duration: 1.1,
             ease: "power3.out",
             scrollTrigger: {
                 trigger: el,
@@ -40,4 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // reveal từ phải
+    gsap.utils.toArray('.reveal-x-right').forEach(el => {
+        gsap.from(el, {
+            x: 120,
+            opacity: 0,
+            duration: 1.1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%"
+            }
+        });
+    });
+
+    gsap.to(".hero-image img", {
+        scale: 1.08,
+        scrollTrigger: {
+            trigger: ".hero-split",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
+    });
 });
