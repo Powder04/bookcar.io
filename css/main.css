@@ -1,0 +1,226 @@
+/* ================= ROOT THEME ================= */
+:root {
+    --bg: #000;
+    --text-title: #fff;
+    --text-sub: #9a9a9a;
+    --primary: #609111;
+    --primary-light: #d1fd9c;
+    --dark-green: #394408;
+    --border: rgba(255,255,255,0.15);
+}
+
+[data-theme="light"] {
+    --bg: #ffffff;
+    --text-title: #000;
+    --text-sub: #555;
+    --border: rgba(0,0,0,0.12);
+}
+
+/* ================= BASE ================= */
+* {
+    box-sizing: border-box;
+    /* Thêm transition mượt cho mọi thay đổi */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-title);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+.text-primary { color: var(--primary); }
+.text-sub { color: var(--text-sub); }
+
+/* ================= SPOTLIGHT ================= */
+.spotlight {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        600px circle at var(--x) var(--y),
+        rgba(96,145,17,0.15),
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ================= HERO SPLIT & 3D EFFECTS ================= */
+.hero-split {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: 100vh;
+    overflow: hidden;
+    perspective: 1000px; /* Kích hoạt không gian 3D */
+}
+
+.hero-text {
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 560px;
+    z-index: 5;
+    /* Hiệu ứng 3D nhẹ khi đứng yên */
+    transform-style: preserve-3d;
+}
+
+/* Hiệu ứng Hover cho Title - Uiverse Style */
+.hero-title {
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 28px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero-title:hover {
+    transform: translateZ(20px);
+    text-shadow: 0 0 20px rgba(96,145,17,0.5);
+}
+
+.hero-title span { color: var(--primary); }
+
+/* ================= BUTTON CỰC CHÁY (SHINE & GLOW) ================= */
+.hero-btn {
+    display: inline-block;
+    padding: 18px 48px;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--dark-green));
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(57,68,8,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(96,145,17,0.5);
+}
+
+/* Hiệu ứng tia chớp quét ngang qua nút giống Uiverse */
+.hero-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+.hero-btn:hover::before {
+    left: 100%;
+}
+
+/* ================= FORM BOOKING CAO CẤP (GLASSMORPHISM) ================= */
+#booking {
+    position: relative;
+    z-index: 1;
+    background: var(--bg);
+}
+
+/* Tạo lớp kính mờ cho container chứa form nếu có */
+#booking .container {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    padding: 40px;
+    transition: border-color 0.4s;
+}
+
+#booking .container:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(96,145,17,0.1);
+}
+
+/* Input Focus Glow - Đặc trưng Uiverse */
+input, textarea, select {
+    color: var(--text-title) !important; /* Đảm bảo thấy chữ */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(96,145,17,0.2);
+    background: rgba(96,145,17,0.03);
+    transform: translateY(-2px);
+}
+
+/* ================= IMAGE SIDE ================= */
+.hero-image {
+    grid-column: 2 / 3;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(
+        to left,
+        rgba(0,0,0,0) 40%,
+        var(--bg) 100%
+    );
+}
+
+/* ================= THEME SWITCH ================= */
+.theme-switch-btn {
+    width: 56px;
+    height: 30px;
+    background: var(--dark-green);
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.theme-switch-circle {
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .hero-split { grid-template-columns: 1fr; }
+    .hero-image::after {
+        background: linear-gradient(to bottom, var(--bg) 10%, transparent 100%);
+    }
+    .hero-text {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        padding: 120px 24px;
+        text-align: center;
+    }
+}
