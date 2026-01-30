@@ -10,30 +10,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="../css/main.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body class="overflow-x-hidden">
     <div class="spotlight"></div>
-    
+
     <!-- ================= HEADER ================= -->
     <nav class="fixed top-0 w-full z-50 px-6 py-4">
       <div
         class="max-w-7xl mx-auto header-flat rounded-2xl px-8 py-4 flex items-center justify-between"
       >
         <span class="text-xl font-extrabold uppercase">
-          Vinfast <span class="text-primary">Limo Green</span>
-        </span>
+          Vinfast <span class="text-primary">Limo Green</span></span
+        >
 
         <ul class="hidden md:flex gap-8 font-semibold">
           <li><a href="#hero" class="nav-link">Trang chủ</a></li>
           <li><a href="#services" class="nav-link">Dịch vụ</a></li>
-          <li><button class="nav-link" onclick="showForm('booking')">Đặt xe</button></li>
+          <li>
+            <button class="nav-link" onclick="showForm('booking')">
+              Đặt xe
+            </button>
+          </li>
           <li><a href="#contact" class="nav-link">Liên hệ</a></li>
         </ul>
 
         <button id="themeToggle" class="theme-switch-btn">
-          <div id="themeCircle" class="theme-switch-circle"><i class="fa-solid fa-moon"></i></div>
+          <div id="themeCircle" class="theme-switch-circle">
+            <i class="fa-solid fa-moon"></i>
+          </div>
         </button>
       </div>
     </nav>
@@ -45,7 +57,7 @@
 
         <h1 class="hero-title">
           Xanh hơn<br />
-          <span>Sang trọng hơn</span>
+          <span>Tiết kiệm hơn</span>
         </h1>
 
         <p class="hero-sub">
@@ -75,14 +87,57 @@
       </div>
 
       <div class="services-zigzag max-w-7xl mx-auto">
-        <div class="service-item left reveal-x-left">
-          <div class="service-card horizontal">
-            <img src="../assets/ảnh 3.png" />
-            <div class="service-content">
-              <h3>Thuê xe đi tỉnh</h3>
-              <p>Đưa đón tận nơi, tài xế lịch sự, xe điện êm ái.</p>
+        <div class="feature-slider-wrapper">
+          <button id="prev" class="slider-arrow left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="feature-viewport">
+            <div class="feature-track">
+              <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Nhanh chóng, tiện lợi</h3>
+                <p>Tình trạng xe luôn sẵn sàng, thủ tục đơn giản.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="icon-box">
+                  <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <h3>Thanh toán dễ dàng</h3>
+                <p>Hỗ trợ nhiều phương thức thanh toán tiện lợi.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-tags"></i></div>
+                <h3>Chi phí hấp dẫn</h3>
+                <p>Chi phí hợp lý, đã bao gồm bảo dưỡng, không phát sinh.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="icon-box">
+                  <i class="fa-solid fa-battery-full"></i>
+                </div>
+                <h3>Pin vượt trội</h3>
+                <p>60.13kWh – di chuyển đến 450km, sạc nhanh DC 30 phút.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-couch"></i></div>
+                <h3>Nội thất cao cấp</h3>
+                <p>7 chỗ rộng rãi, màn hình 10.1", điều hòa tự động.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+                <h3>Dịch vụ tận tâm</h3>
+                <p>Tư vấn nhiệt tình, hỗ trợ 24/7, luôn sẵn sàng.</p>
+              </div>
             </div>
           </div>
+          <button id="next" class="slider-arrow right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
 
         <div class="service-item right reveal-x-right">
@@ -116,7 +171,8 @@
         <h2 class="text-4xl font-black text-center mb-12">Đặt Xe</h2>
         <form class="grid md:grid-cols-2 gap-8">
           <div class="space-y-2">
-            <label class="  text-sm font-semibold"><i class="fa-solid fa-location-dot"></i> Điểm đón</label>
+            <label class="text-sm font-semibold"
+              ><i class="fa-solid fa-location-dot mr-2"></i>Điểm đón</label>
             <input
               type="text"
               class="input_order"
@@ -125,7 +181,8 @@
           </div>
 
           <div class="space-y-2">
-            <label class=" text-sm font-semibold"><i class="fa-solid fa-location-dot"></i> Điểm đến</label>
+            <label class="text-sm font-semibold"
+              ><i class="fa-solid fa-location-dot mr-2"></i>Điểm đến</label>
             <input
               type="text"
               class="input_order"
@@ -134,22 +191,26 @@
           </div>
 
           <div class="space-y-2">
-            <label class="text-sm font-semibold"><i class="fa-solid fa-calendar"></i> Ngày đi</label>
+            <label class="text-sm font-semibold"
+              ><i class="fa-solid fa-calendar mr-2"></i>Ngày đi</label>
             <input type="date" class="input_order" />
           </div>
 
           <div class="space-y-2">
-            <label class="text-sm font-semibold"><i class="fa-solid fa-calendar"></i> Ngày về</label>
+            <label class="text-sm font-semibold"
+              ><i class="fa-solid fa-calendar mr-2"></i>Ngày về</label>
             <input type="date" class="input_order" />
           </div>
 
           <div class="space-y-2">
-            <label class="text-sm font-semibold"><i class="fa-solid fa-clock"></i> Giờ đi</label>
+            <label class="text-sm font-semibold"
+              ><i class="fa-solid fa-clock mr-2"></i>Giờ đi</label>
             <input type="time" class="input_order" />
           </div>
 
           <div class="space-y-2">
-            <label class="text-sm font-semibold"><i class="fa-solid fa-user"></i> Họ tên</label>
+            <label class="text-sm font-semibold"
+              ><i class="fa-solid fa-user mr-2"></i>Họ tên</label>
             <input
               type="text"
               class="input_order"
@@ -159,8 +220,7 @@
 
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-phone"></i> Số điện thoại</label
-            >
+              ><i class="fa-solid fa-phone mr-2"></i>Số điện thoại</label>
             <input type="tel" class="input_order" placeholder="Số liên hệ" />
           </div>
 
@@ -186,9 +246,13 @@
           </div>
           <div>
             <p class="font-bold mb-3">Liên hệ</p>
-            <p class="text-sub"><i class="fa-solid fa-phone"></i> 09 xxx xxx</p>
-            <p class="text-sub"><i class="fa-solid fa-location-dot"></i>  Cần Thơ & các tỉnh lân cận</p>
-            <p class="text-sub"><i class="fa-solid fa-clock"></i> Phục vụ 24/7</p>
+            <p class="text-sub"><i class="fa-solid fa-phone mr-2"></i>09 xxx xxx</p>
+            <p class="text-sub">
+              <i class="fa-solid fa-location-dot mr-2"></i>Cần Thơ & các tỉnh lân cận
+            </p>
+            <p class="text-sub">
+              <i class="fa-solid fa-clock mr-2"></i>Phục vụ 24/7
+            </p>
           </div>
           <div class="md:text-right">
             <p class="font-bold mb-3">Sẵn sàng cho chuyến đi?</p>
