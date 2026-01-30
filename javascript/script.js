@@ -63,3 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Show form booking
+function showForm(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeForm() {
+  document.getElementById('booking').classList.remove('active');
+  document.body.style.overflow = '';
+}

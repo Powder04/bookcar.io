@@ -1,206 +1,217 @@
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vinfast Limo Green | Luxury Travel</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-</head>
+  </head>
 
-<body class="overflow-x-hidden">
+  <body class="overflow-x-hidden">
+    <div class="spotlight"></div>
 
-<div class="spotlight"></div>
-
-<!-- ================= HEADER ================= -->
-<nav class="fixed top-0 w-full z-50 px-6 py-4">
-    <div class="max-w-7xl mx-auto header-flat rounded-2xl px-8 py-4 flex items-center justify-between">
-
+    <!-- ================= HEADER ================= -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+      <div
+        class="max-w-7xl mx-auto header-flat rounded-2xl px-8 py-4 flex items-center justify-between"
+      >
         <span class="text-xl font-extrabold uppercase">
-            Vinfast <span class="text-primary">Limo Green</span>
+          Vinfast <span class="text-primary">Limo Green</span>
         </span>
 
         <ul class="hidden md:flex gap-8 font-semibold">
-            <li><a href="#hero" class="nav-link">Trang chủ</a></li>
-            <li><a href="#services" class="nav-link">Dịch vụ</a></li>
-            <li><a href="#booking" class="nav-link">Đặt xe</a></li>
-            <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+          <li><a href="#hero" class="nav-link">Trang chủ</a></li>
+          <li><a href="#services" class="nav-link">Dịch vụ</a></li>
+          <li><button class="nav-link" onclick="showForm('booking')">Đặt xe</button></li>
+          <li><a href="#contact" class="nav-link">Liên hệ</a></li>
         </ul>
 
         <button id="themeToggle" class="theme-switch-btn">
-            <div id="themeCircle" class="theme-switch-circle">🌙</div>
+          <div id="themeCircle" class="theme-switch-circle">🌙</div>
         </button>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<!-- ================= HERO ================= -->
-<section id="hero" class="hero-split">
-    <div class="hero-text reveal">
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="hero-split">
+      <div class="hero-text reveal">
         <div class="uiverse-badge mb-6">Vinfast VF9 Limo 7 chỗ</div>
 
         <h1 class="hero-title">
-            Xanh hơn<br>
-            <span>Sang trọng hơn</span>
+          Xanh hơn<br />
+          <span>Sang trọng hơn</span>
         </h1>
 
         <p class="hero-sub">
-            Trải nghiệm di chuyển êm ái với dòng xe điện cao cấp,
-            nội thất thương gia tại Cần Thơ.
+          Trải nghiệm di chuyển êm ái với dòng xe điện cao cấp, nội thất thương
+          gia tại Cần Thơ.
         </p>
 
-        <a href="#booking" class="hero-btn">
-            ĐẶT XE NGAY
-        </a>
-    </div>
+        <button class="hero-btn" onclick="showForm('booking')">
+          ĐẶT XE NGAY
+        </button>
+      </div>
 
-    <div class="hero-image">
-        <img src="../assets/ảnh 1.jpg" alt="Vinfast Limo">
-    </div>
-</section>
+      <div class="hero-image">
+        <img src="../assets/ảnh 1.jpg" alt="Vinfast Limo" />
+      </div>
+    </section>
 
-
-<!-- ================= SERVICES ================= -->
-<section id="services" class="px-6 py-32">
-    <div class="max-w-7xl mx-auto text-center mb-20 reveal">
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="px-6 py-32">
+      <div class="max-w-7xl mx-auto text-center mb-20 reveal">
         <h2 class="text-5xl font-black mb-4">
-            Dịch vụ <span class="text-primary">cao cấp</span>
+          Dịch vụ <span class="text-primary">cao cấp</span>
         </h2>
         <p class="text-sub text-lg">
-            Mỗi hành trình là một trải nghiệm sang trọng & bền vững
+          Mỗi hành trình là một trải nghiệm sang trọng & bền vững
         </p>
-    </div>
+      </div>
 
-    <div class="services-zigzag max-w-7xl mx-auto">
-
+      <div class="services-zigzag max-w-7xl mx-auto">
         <div class="service-item left reveal-x-left">
-            <div class="service-card horizontal">
-                <img src="../assets/ảnh 3.png">
-                <div class="service-content">
-                    <h3>Thuê xe đi tỉnh</h3>
-                    <p>Đưa đón tận nơi, tài xế lịch sự, xe điện êm ái.</p>
-                </div>
+          <div class="service-card horizontal">
+            <img src="../assets/ảnh 3.png" />
+            <div class="service-content">
+              <h3>Thuê xe đi tỉnh</h3>
+              <p>Đưa đón tận nơi, tài xế lịch sự, xe điện êm ái.</p>
             </div>
+          </div>
         </div>
 
         <div class="service-item right reveal-x-right">
-            <div class="service-card horizontal">
-                <img src="../assets/ảnh 4.jpg">
-                <div class="service-content">
-                    <h3>Đón tiễn sân bay</h3>
-                    <p>Cam kết đúng giờ, phục vụ nước & khăn lạnh.</p>
-                </div>
+          <div class="service-card horizontal">
+            <img src="../assets/ảnh 4.jpg" />
+            <div class="service-content">
+              <h3>Đón tiễn sân bay</h3>
+              <p>Cam kết đúng giờ, phục vụ nước & khăn lạnh.</p>
             </div>
+          </div>
         </div>
 
         <div class="service-item left reveal-x-left">
-            <div class="service-card horizontal">
-                <img src="../assets/ảnh 5.jpg">
-                <div class="service-content">
-                    <h3>Hợp đồng VIP</h3>
-                    <p>Hội nghị, cưới hỏi, đối tác doanh nghiệp.</p>
-                </div>
+          <div class="service-card horizontal">
+            <img src="../assets/ảnh 5.jpg" />
+            <div class="service-content">
+              <h3>Hợp đồng VIP</h3>
+              <p>Hội nghị, cưới hỏi, đối tác doanh nghiệp.</p>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
 
+    <!-- ================= BOOKING ================= -->
+    <!-- ================= BOOKING MODAL ================= -->
+    <div id="booking" class="modal active">
+      <div class="modal-overlay" onclick="closeForm()"></div>
+      <div class="modal-content form-container-flat p-12">
+        <button class="modal-close" onclick="closeForm()">✕</button>
+        <h2 class="text-4xl font-black text-center mb-12">Phiếu đăng ký</h2>
+        <form class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-2">
+            <label class="text-sub text-sm font-semibold">📍 Điểm đón</label>
+            <input
+              type="text"
+              class="input_order"
+              placeholder="Địa chỉ đón khách"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sub text-sm font-semibold">🏁 Điểm đến</label>
+            <input
+              type="text"
+              class="input_order"
+              placeholder="Nơi bạn muốn tới"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sub text-sm font-semibold">📅 Ngày đi</label>
+            <input type="date" class="input_order" />
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sub text-sm font-semibold">📅 Ngày về</label>
+            <input type="date" class="input_order" />
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sub text-sm font-semibold">⏰ Giờ đi</label>
+            <input type="time" class="input_order" />
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sub text-sm font-semibold">👤 Họ tên</label>
+            <input
+              type="text"
+              class="input_order"
+              placeholder="Tên khách hàng"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sub text-sm font-semibold"
+              >📞 Số điện thoại</label
+            >
+            <input type="tel" class="input_order" placeholder="Số liên hệ" />
+          </div>
+
+          <button class="hero-btn md:col-span-2 mt-4">
+            XÁC NHẬN HÀNH TRÌNH
+          </button>
+        </form>
+      </div>
     </div>
-</section>
 
-
-<!-- ================= BOOKING ================= -->
-<section id="booking" class="py-32 px-6">
-    <div class="max-w-4xl mx-auto form-container-flat p-12">
-        <h2 class="text-4xl font-black text-center mb-12">
-            Phiếu đăng ký
-        </h2>
-
-       <form class="grid md:grid-cols-2 gap-8">
-
-    <div class="space-y-2">
-        <label class="text-sub text-sm font-semibold">📍 Điểm đón</label>
-        <input type="text" placeholder="Địa chỉ đón khách">
-    </div>
-
-    <div class="space-y-2">
-        <label class="text-sub text-sm font-semibold">🏁 Điểm đến</label>
-        <input type="text" placeholder="Nơi bạn muốn tới">
-    </div>
-
-    <div class="space-y-2">
-        <label class="text-sub text-sm font-semibold">📅 Ngày đi</label>
-        <input type="date">
-    </div>
-
-    <div class="space-y-2">
-        <label class="text-sub text-sm font-semibold">📅 Ngày về</label>
-        <input type="date">
-    </div>
-
-    <div class="space-y-2">
-        <label class="text-sub text-sm font-semibold">⏰ Giờ đi</label>
-        <input type="time">
-    </div>
-
-    <div class="space-y-2">
-        <label class="text-sub text-sm font-semibold">👤 Họ tên</label>
-        <input type="text" placeholder="Tên khách hàng">
-    </div>
-
-    <div class="space-y-2">
-        <label class="text-sub text-sm font-semibold">📞 Số điện thoại</label>
-        <input type="tel" placeholder="Số liên hệ">
-    </div>
-
-    <button class="hero-btn md:col-span-2 mt-4">
-        XÁC NHẬN HÀNH TRÌNH
-    </button>
-
-</form>
-
-    </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer id="contact" class="px-6 pt-24 pb-12">
-    <div class="max-w-7xl mx-auto footer-flat rounded-[2.5rem] p-12">
-
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="px-6 pt-24 pb-12">
+      <div class="max-w-7xl mx-auto footer-flat rounded-[2.5rem] p-12">
         <div class="grid md:grid-cols-3 gap-10 mb-10">
-            <div>
-                <h3 class="font-extrabold uppercase mb-3 text-lg">
-                    Vinfast <span class="text-primary">Limo Green</span>
-                </h3>
-                <p class="text-sub leading-relaxed">
-                    Dịch vụ xe điện cao cấp tại Cần Thơ.<br>
-                    Êm ái – Sang trọng – Thân thiện môi trường.
-                </p>
-            </div>
-            <div>
-                <p class="font-bold mb-3">Liên hệ</p>
-                <p class="text-sub">📞 0909 000 000</p>
-                <p class="text-sub">📍 Cần Thơ & các tỉnh lân cận</p>
-                <p class="text-sub">⏱ Phục vụ 24/7</p>
-            </div>
-            <div class="md:text-right">
-                <p class="font-bold mb-3">Sẵn sàng cho chuyến đi?</p>
-                <a href="#booking" class="hero-btn">
-                    ĐẶT XE NGAY
-                </a>
-            </div>
-
+          <div>
+            <h3 class="font-extrabold uppercase mb-3 text-lg">
+              Vinfast <span class="text-primary">Limo Green</span>
+            </h3>
+            <p class="text-sub leading-relaxed">
+              Dịch vụ xe điện cao cấp tại Cần Thơ.<br />
+              Êm ái – Sang trọng – Thân thiện môi trường.
+            </p>
+          </div>
+          <div>
+            <p class="font-bold mb-3">Liên hệ</p>
+            <p class="text-sub">📞 0909 000 000</p>
+            <p class="text-sub">📍 Cần Thơ & các tỉnh lân cận</p>
+            <p class="text-sub">⏱ Phục vụ 24/7</p>
+          </div>
+          <div class="md:text-right">
+            <p class="font-bold mb-3">Sẵn sàng cho chuyến đi?</p>
+            <button class="hero-btn" onclick="showForm('booking')">
+              ĐẶT XE NGAY
+            </button>
+          </div>
         </div>
 
-        <div class="border-t border-[var(--border)] pt-6 text-center text-xs text-sub">
-            © 2026 Vinfast Limo Green · Luxury Electric Travel
+        <div
+          class="border-t border-[var(--border)] pt-6 text-center text-xs text-sub"
+        >
+          © 2026 Vinfast Limo Green · Luxury Electric Travel
         </div>
+      </div>
+    </footer>
 
-    </div>
-</footer>
-
-
-<script src="../javascript/script.js"></script>
-</body>
+    <script src="../javascript/script.js"></script>
+  </body>
 </html>
