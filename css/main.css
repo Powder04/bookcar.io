@@ -1,22 +1,30 @@
+
+/* THEME */
 :root {
     --bg: #000;
     --card: rgba(255,255,255,0.05);
+    --form: rgba(255,255,255,0.05);
     --text-title: #fff;
     --text-sub: #9a9a9a;
     --primary: #609111;
     --primary-light: #d1fd9c;
     --dark-green: #394408;
     --border: rgba(255,255,255,0.15);
-    --bg-form: rgba(0, 0, 0, 0.5);
+    --primary-text-form: #9a9a9a;
+    --border-form: rgba(255,255,255,0.15);
+    --bg-form:rgba(255,255,255,0.05);
+    --overlay: rgba(0, 0, 0, 0.65);
 }
 
 [data-theme="light"] {
     --bg: #ffffff;
-    --card: rgba(0,0,0,0.05);
     --text-title: #000;
     --text-sub: #555;
     --border: rgba(0,0,0,0.12);
-    --bg-form: rgba(255, 255, 255, 0.7);
+    --primary-text-form:#000;
+    --border-form: #fff;
+    --bg-form:  rgba(0, 0, 0, 0.099);
+    --overlay:rgba(0, 0, 0, 0.053);
 }
 
 /* ================= BASE ================= */
@@ -33,14 +41,10 @@ body {
     overflow-x: hidden;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-}
+
 
 .text-primary { color: var(--primary); }
 .text-sub { color: var(--text-sub); }
-.text-form { color: var(--text-form); }
 
 /* ================= GLASS CONTAINER ================= */
 .header-flat,
@@ -49,6 +53,7 @@ img {
     background: var(--card);
     backdrop-filter: blur(18px);
     border: 1px solid var(--border);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 /* ================= SPOTLIGHT ================= */
@@ -64,13 +69,7 @@ img {
     z-index: -1;
 }
 
-[data-theme="light"] .spotlight {
-    background: radial-gradient(
-        600px circle at var(--x) var(--y),
-        rgba(96,145,17,0.08),
-        transparent 65%
-    );
-}
+
 
 /* ================= NAV ================= */
 .nav-link {
@@ -102,7 +101,8 @@ img {
 .theme-switch-btn {
     width: 56px;
     height: 30px;
-    background: var(--dark-green);
+    border: none;
+    background: var(--primary);
     border-radius: 50px;
     padding: 4px;
     cursor: pointer;
@@ -112,8 +112,8 @@ img {
 
 .theme-switch-circle {
     width: 22px;
+    color: var(--text-tittle);
     padding: 0px 1px;
-    background: #fff;
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -176,7 +176,6 @@ img {
     padding: 18px 48px;
     border-radius: 1.5rem;
     background: linear-gradient(135deg, var(--primary), var(--dark-green));
-    color: #fff;
     font-weight: 800;
     text-decoration: none;
     position: relative;
@@ -184,8 +183,9 @@ img {
     box-shadow: 0 10px 20px rgba(57,68,8,0.3);
 }
 
+.service-card:hover,
 .hero-btn:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform: translateY(-3px) scale(1.1);
     box-shadow: 0 20px 40px rgba(96,145,17,0.5);
 }
 
@@ -211,6 +211,7 @@ img {
 .hero-image {
     grid-column: 2 / 3;
     position: relative;
+    overflow: hidden;
 }
 
 .hero-image img {
@@ -274,11 +275,18 @@ img {
     padding: 20px 22px;
     font-size: 1rem;
     border-radius: 16px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    color: var(--text-title);
+    background: rgba(62, 59, 59, 0.236);
+    border: var(--border-form);
+    color: var(--primary-text-form);
     outline: none;
 }
+
+.input_order::placeholder {
+  color: var(--primary-text-form);
+  opacity: 1; 
+  border: var(--border-form);
+}
+
 
 .modal {
   position: fixed;
@@ -305,21 +313,23 @@ img {
 .modal-overlay {
   position: absolute;
   inset: 0;
-  background: var(--bg-form);
+  background: var(--overlay);
   backdrop-filter: blur(6px);
 }
 
 /* Form */
 .modal-content {
   position: relative;
-  z-index: 2;
+  z-index: 999;
   max-width: 900px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  scrollbar-width: none;
   border-radius: 2rem;
   animation: zoomIn 0.35s ease;
+  scrollbar-width: none;
+  background-color: var(--bg-form);
+  color: var(--primary-text-form);
 }
 
 /* Nút đóng */
@@ -329,7 +339,12 @@ img {
   right: 24px;
   font-size: 24px;
   font-weight: bold;
-  cursor: pointer;
+  padding: 1px 8px;
+  border-radius: 100%;
+}
+
+.modal-close:hover{
+    background-color: #ffffff81;
 }
 
 @keyframes zoomIn {
@@ -369,6 +384,7 @@ img {
     display: flex;
     gap: 32px;
     padding: 32px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 /* ảnh gọn lại */
@@ -385,7 +401,7 @@ img {
 }
 
 /* mobile */
-@media (max-width: 992px) {
+@media (max-width:768px) {
     .service-item {
         justify-content: center !important;
     }

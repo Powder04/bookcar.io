@@ -3,25 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vinfast Limo Green | Luxury Travel</title>
+    <title>Vinfast Limo Green | Limo Booking</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../css/main.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  </head>
   <body class="overflow-x-hidden">
     <div class="spotlight"></div>
-
+    
     <!-- ================= HEADER ================= -->
     <nav class="fixed top-0 w-full z-50 px-6 py-4">
       <div
@@ -39,7 +33,7 @@
         </ul>
 
         <button id="themeToggle" class="theme-switch-btn">
-          <div id="themeCircle" class="theme-switch-circle">🌙</div>
+          <div id="themeCircle" class="theme-switch-circle"><i class="fa-solid fa-moon"></i></div>
         </button>
       </div>
     </nav>
@@ -114,14 +108,15 @@
     </section>
 
     <!-- ================= BOOKING ================= -->
-    <div id="booking" class="modal active">
+    <!-- ================= BOOKING MODAL ================= -->
+    <div id="booking" class="modal">
       <div class="modal-overlay" onclick="closeForm()"></div>
       <div class="modal-content form-container-flat p-12">
         <button class="modal-close" onclick="closeForm()">✕</button>
-        <h2 class="text-4xl font-black text-center mb-12">Phiếu đăng ký</h2>
+        <h2 class="text-4xl font-black text-center mb-12">Đặt Xe</h2>
         <form class="grid md:grid-cols-2 gap-8">
           <div class="space-y-2">
-            <label class="text-title text-sm font-semibold">📍 Điểm đón</label>
+            <label class="  text-sm font-semibold"><i class="fa-solid fa-location-dot"></i> Điểm đón</label>
             <input
               type="text"
               class="input_order"
@@ -130,7 +125,7 @@
           </div>
 
           <div class="space-y-2">
-            <label class="text-title text-sm font-semibold">🏁 Điểm đến</label>
+            <label class=" text-sm font-semibold"><i class="fa-solid fa-location-dot"></i> Điểm đến</label>
             <input
               type="text"
               class="input_order"
@@ -139,22 +134,22 @@
           </div>
 
           <div class="space-y-2">
-            <label class="text-title text-sm font-semibold">📅 Ngày đi</label>
+            <label class="text-sm font-semibold"><i class="fa-solid fa-calendar"></i> Ngày đi</label>
             <input type="date" class="input_order" />
           </div>
 
           <div class="space-y-2">
-            <label class="text-title text-sm font-semibold">📅 Ngày về</label>
+            <label class="text-sm font-semibold"><i class="fa-solid fa-calendar"></i> Ngày về</label>
             <input type="date" class="input_order" />
           </div>
 
           <div class="space-y-2">
-            <label class="text-title text-sm font-semibold">⏰ Giờ đi</label>
+            <label class="text-sm font-semibold"><i class="fa-solid fa-clock"></i> Giờ đi</label>
             <input type="time" class="input_order" />
           </div>
 
           <div class="space-y-2">
-            <label class="text-title text-sm font-semibold">👤 Họ tên</label>
+            <label class="text-sm font-semibold"><i class="fa-solid fa-user"></i> Họ tên</label>
             <input
               type="text"
               class="input_order"
@@ -163,8 +158,8 @@
           </div>
 
           <div class="space-y-2">
-            <label class="text-title text-sm font-semibold"
-              >📞 Số điện thoại</label
+            <label class="text-sm font-semibold"
+              ><i class="fa-solid fa-phone"></i> Số điện thoại</label
             >
             <input type="tel" class="input_order" placeholder="Số liên hệ" />
           </div>
@@ -191,9 +186,9 @@
           </div>
           <div>
             <p class="font-bold mb-3">Liên hệ</p>
-            <p class="text-sub">📞 0909 000 000</p>
-            <p class="text-sub">📍 Cần Thơ & các tỉnh lân cận</p>
-            <p class="text-sub">⏱ Phục vụ 24/7</p>
+            <p class="text-sub"><i class="fa-solid fa-phone"></i> 09 xxx xxx</p>
+            <p class="text-sub"><i class="fa-solid fa-location-dot"></i>  Cần Thơ & các tỉnh lân cận</p>
+            <p class="text-sub"><i class="fa-solid fa-clock"></i> Phục vụ 24/7</p>
           </div>
           <div class="md:text-right">
             <p class="font-bold mb-3">Sẵn sàng cho chuyến đi?</p>

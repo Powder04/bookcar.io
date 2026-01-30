@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html.dataset.theme = theme;
         localStorage.setItem('theme', theme);
         toggle.classList.toggle('light-active', theme === 'light');
-        circle.textContent = theme === 'light' ? '☀️' : '🌙';
+        circle.innerHTML = theme === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     }
 
     window.addEventListener('mousemove', e => {
