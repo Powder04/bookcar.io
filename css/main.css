@@ -2,7 +2,6 @@
 :root {
   --bg: #000;
   --card: rgba(255, 255, 255, 0.05);
-  --form: rgba(255, 255, 255, 0.05);
   --text-title: #fff;
   --text-sub: #9a9a9a;
   --primary: #609111;
@@ -111,7 +110,7 @@ body {
 
 .theme-switch-circle {
   width: 22px;
-  color: var(--text-tittle);
+  color: var(--text-title);
   padding: 0px 1px;
   border-radius: 50%;
   display: grid;
@@ -130,7 +129,7 @@ body {
   grid-template-columns: 1fr 2fr;
   min-height: 100vh;
   overflow: hidden;
-  perspective: 1000px;
+  /* perspective: 1000px; */
 }
 
 .hero-text {
@@ -182,7 +181,7 @@ body {
   box-shadow: 0 10px 20px rgba(57, 68, 8, 0.3);
 }
 
-.service-card:hover,
+/* .service-card:hover, */
 .hero-btn:hover {
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 20px 40px rgba(96, 145, 17, 0.5);
@@ -271,7 +270,7 @@ body {
   font-size: 1rem;
   border-radius: 16px;
   background: rgba(62, 59, 59, 0.236);
-  border: var(--border-form);
+  /* border: var(--border-form); */
   color: var(--primary-text-form);
   outline: none;
 }
@@ -482,7 +481,7 @@ body {
 
 .feature-card {
   flex: 0 0 calc((100% - 48px) / 3);
-  background: var(--card-bg);
+  background: var(--card);
   border-radius: 1.75rem;
   padding: 2.5rem 2rem;
   text-align: center;
