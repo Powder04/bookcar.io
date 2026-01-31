@@ -456,6 +456,8 @@ body {
 
 .feature-viewport {
   overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
 }
 
 .feature-track {
@@ -463,6 +465,15 @@ body {
   gap: 24px;
   transition: transform 0.6s ease;
   will-change: transform;
+}
+
+.feature-card.active {
+  opacity: 1;
+  z-index: 5;
+}
+
+.feature-viewport.dragging {
+  cursor: grabbing;
 }
 
 .feature-card {
@@ -473,6 +484,7 @@ body {
   text-align: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   transition: all 0.35s ease;
+  opacity: 0.3;
 }
 
 .feature-card:hover {

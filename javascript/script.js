@@ -117,6 +117,19 @@ function setupClones() {
 function move(noTransition = false) {
   track.style.transition = noTransition ? "none" : "transform 0.6s ease";
   track.style.transform = `translateX(-${index * cardWidth()}px)`;
+
+  setActiveCard();
+}
+
+function setActiveCard() {
+  cards.forEach(c => c.classList.remove("active"));
+
+  const centerOffset = Math.floor(visible / 2);
+  const activeIndex = index + centerOffset;
+
+  if (cards[activeIndex]) {
+    cards[activeIndex].classList.add("active");
+  }
 }
 
 next.onclick = () => {
@@ -146,3 +159,70 @@ window.addEventListener("resize", () => {
 });
 
 setupClones();
+
+// Touch
+const viewport = document.querySelector('.feature-viewport');
+
+let isDragging = false;
+let startX = 0;
+let currentX = 0;
+let dragOffset = 0;
+
+/* ===== BASE OFFSET ===== */
+function getBaseOffset() {
+  return -index * cardWidth();
+}
+
+/* ===== START ===== */
+function dragStart(x) {
+  isDragging = true;
+  startX = x;
+  dragOffset = 0;
+  track.style.transition = "none";
+  viewport.classList.add('dragging');
+}
+
+/* ===== MOVE ===== */
+function dragMove(x) {
+  if (!isDragging) return;
+
+  currentX = x;
+  dragOffset = currentX - startX;
+
+  track.style.transform =
+    `translateX(${getBaseOffset() + dragOffset}px)`;
+}
+
+/* ===== END ===== */
+function dragEnd() {
+  if (!isDragging) return;
+
+  isDragging = false;
+  viewport.classList.remove('dragging');
+
+  if (dragOffset > 80) index--;
+  if (dragOffset < -80) index++;
+
+  dragOffset = 0;
+  move();
+}
+
+/* ===== DESKTOP ===== */
+viewport.addEventListener('mousedown', e => {
+  e.preventDefault();
+  dragStart(e.clientX);
+});
+
+window.addEventListener('mousemove', e => dragMove(e.clientX));
+window.addEventListener('mouseup', dragEnd);
+
+/* ===== MOBILE ===== */
+viewport.addEventListener('touchstart', e =>
+  dragStart(e.touches[0].clientX)
+);
+
+viewport.addEventListener('touchmove', e => {
+  dragMove(e.touches[0].clientX);
+}, { passive: true });
+
+viewport.addEventListener('touchend', dragEnd);
