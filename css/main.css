@@ -225,25 +225,24 @@ body {
 }
 
 /* ================= SERVICE CARD ================= */
+/* card dài ~2/3 màn hình */
 .service-card {
-  position: relative;
-  border-radius: 2rem;
-  overflow: hidden;
   background: var(--card);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border);
+  border-radius: 2rem;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+              rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+              rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   cursor: pointer;
+  display: flex;
+  gap: 32px;
+  max-width: 1000px;
+  overflow: hidden;
+  padding: 32px;
+  position: relative;
   transform-style: preserve-3d;
-}
-
-.service-card img {
-  height: 260px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.service-content {
-  padding: 28px;
+  width: 66.66vw;
 }
 
 .service-content h3 {
@@ -255,6 +254,32 @@ body {
 .service-content p {
   color: var(--text-sub);
   line-height: 1.6;
+}
+
+.service-item.left {
+  justify-content: flex-start;
+}
+
+.service-item.right {
+  justify-content: flex-end;
+}
+
+.service-item {
+  display: flex;
+  width: 100%;
+}
+
+/* ảnh gọn lại */
+.service-item .service-card img {
+  width: 40%;
+  height: 260px;
+  border-radius: 1.8rem;
+  object-fit: cover;
+}
+
+/* content không dồn */
+.service-item .service-content {
+  padding: 0;
 }
 
 /* ================= FORM ================= */
@@ -352,44 +377,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 120px;
-}
-
-.service-item {
-  display: flex;
-  width: 100%;
-}
-
-.service-item.left {
-  justify-content: flex-start;
-}
-
-.service-item.right {
-  justify-content: flex-end;
-}
-
-/* card dài ~2/3 màn hình */
-.service-item .service-card {
-  width: 66.66vw;
-  max-width: 1000px;
-  display: flex;
-  gap: 32px;
-  padding: 32px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-}
-
-/* ảnh gọn lại */
-.service-item .service-card img {
-  width: 40%;
-  height: 260px;
-  border-radius: 1.8rem;
-  object-fit: cover;
-}
-
-/* content không dồn */
-.service-item .service-content {
-  padding: 0;
 }
 
 /* mobile */
