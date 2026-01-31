@@ -274,6 +274,13 @@ body {
   justify-content: center;
 }
 
+.booking-grid {
+  max-width: 720px;          
+  margin-left: auto;         
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
 /* card trong grid không cần width 66vw */
 .car-grid .service-card {
   width: 100%;
@@ -492,10 +499,19 @@ body {
   .car-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .booking-grid {
+    max-width: 100%;
+    margin-left: 0;
+  }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .booking-grid {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
   .car-grid {
     grid-template-columns: 1fr;
     gap: 20px;
