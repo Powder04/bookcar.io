@@ -129,7 +129,6 @@ body {
   grid-template-columns: 1fr 2fr;
   min-height: 100vh;
   overflow: hidden;
-  /* perspective: 1000px; */
 }
 
 .hero-text {
@@ -181,7 +180,6 @@ body {
   box-shadow: 0 10px 20px rgba(57, 68, 8, 0.3);
 }
 
-/* .service-card:hover, */
 .hero-btn:hover {
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 20px 40px rgba(96, 145, 17, 0.5);
@@ -270,7 +268,6 @@ body {
   font-size: 1rem;
   border-radius: 16px;
   background: rgba(62, 59, 59, 0.236);
-  /* border: var(--border-form); */
   color: var(--primary-text-form);
   outline: none;
 }
