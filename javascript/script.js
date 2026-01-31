@@ -239,3 +239,26 @@ viewport.addEventListener('touchmove', e => {
 }, { passive: true });
 
 viewport.addEventListener('touchend', dragEnd);
+
+/* ===== CHECK FORM ===== */
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+  const startDate = document.getElementById("startDate").value;
+  const endDate = document.getElementById("endDate").value;
+  const phoneNum = document.getElementById("phoneNum").value.trim();
+
+  // Check phone number
+  const phoneCheck = /^(0[3|5|7|8|9])[0-9]{8}$/;
+
+  if(!phoneCheck.test(phoneNum)){
+    e.preventDefault();
+    alert("Số điện thoại không hợp lệ!");
+    return;
+  }
+
+  // Check date
+  if(new Date(endDate) <= new Date(startDate)){
+    e.preventDefault();
+    alert("Ngày về phải sau ngày đi!");
+    return;
+  }
+});

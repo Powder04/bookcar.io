@@ -175,7 +175,7 @@
           <h2 class="text-5xl font-black mb-4">
             Dịch vụ <span class="text-primary">đặt xe</span>
           </h2>
-          <p class="text-sub text-lg">Thuê xe theo NGÀY, THÁNG, NĂM. Thủ tục đơn giản, nhanh chóng.</p>
+          <p class="text-sub text-lg">Thuê xe theo NGÀY, THÁNG. Thủ tục đơn giản, nhanh chóng.</p>
         </div>
 
         <!-- PRICE BUTTON -->
@@ -184,30 +184,38 @@
         </button>
 
         <div class="service-item left reveal-x-left car-grid">
-          <div class="service-card">
-            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-bac-1110x581.png" />
-            <div class="service-content">
-              <h3>Limo Green - <span style="color: gray;">Bạc</span></h3>
+          <button onclick="showForm('booking')">
+            <div class="service-card">
+              <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-bac-1110x581.png" />
+              <div class="service-content">
+                <h3>Limo Green - <span style="color: gray;">Bạc</span></h3>
+              </div>
             </div>
-          </div>
-          <div class="service-card">
-            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-vang-1110x581.png" />
-            <div class="service-content">
-              <h3>Limo Green - <span style="color: rgb(206, 206, 3);">Vàng</span></h3>
+          </button>
+          <button onclick="showForm('booking')">
+            <div class="service-card">
+              <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-vang-1110x581.png" />
+              <div class="service-content">
+                <h3>Limo Green - <span style="color: rgb(206, 206, 3);">Vàng</span></h3>
+              </div>
             </div>
-          </div>
-          <div class="service-card">
-            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-do-1110x581.png" />
-            <div class="service-content">
-              <h3>Limo Green - <span style="color: red;">Đỏ</span></h3>
+          </button>    
+          <button onclick="showForm('booking')">
+            <div class="service-card">
+              <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-do-1110x581.png" />
+              <div class="service-content">
+                <h3>Limo Green - <span style="color: red;">Đỏ</span></h3>
+              </div>
             </div>
-          </div>
-          <div class="service-card">
-            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-den-1110x581.png" />
-            <div class="service-content">
-              <h3>Limo Green - <span>Đen</span></h3>
+          </button>
+          <button onclick="showForm('booking')">
+            <div class="service-card">
+              <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-den-1110x581.png" />
+              <div class="service-content">
+                <h3>Limo Green - <span>Đen</span></h3>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </section>
@@ -218,11 +226,12 @@
       <div class="modal-content form-container-flat p-12">
         <button class="modal-close" onclick="closeForm()">✕</button>
         <h2 class="text-4xl font-black text-center mb-12">Đặt Xe</h2>
-        <form action="" method="post" class="grid md:grid-cols-2 gap-8">
+        <form id="bookingForm" action="" method="post" class="grid md:grid-cols-2 gap-8">
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-location-dot mr-2"></i>Điểm đón</label>
+              ><i class="fa-solid fa-location-dot mr-2"></i>Điểm đón <span class="text-red-500">*</span></label>
             <input
+              required
               type="text"
               class="input_order"
               placeholder="Địa chỉ đón khách"
@@ -231,8 +240,9 @@
 
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-location-dot mr-2"></i>Điểm đến</label>
+              ><i class="fa-solid fa-location-dot mr-2"></i>Điểm đến <span class="text-red-500">*</span></label>
             <input
+              required
               type="text"
               class="input_order"
               placeholder="Nơi bạn muốn tới"
@@ -241,26 +251,27 @@
 
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-calendar mr-2"></i>Ngày đi</label>
-            <input type="date" class="input_order" />
+              ><i class="fa-solid fa-calendar mr-2"></i>Ngày đi <span class="text-red-500">*</span></label>
+            <input id="startDate" required type="date" class="input_order" />
           </div>
 
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-calendar mr-2"></i>Ngày về</label>
-            <input type="date" class="input_order" />
+              ><i class="fa-solid fa-calendar mr-2"></i>Ngày về <span class="text-red-500">*</span></label>
+            <input id="endtDate" required type="date" class="input_order" />
           </div>
 
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-clock mr-2"></i>Giờ đi</label>
-            <input type="time" class="input_order" />
+              ><i class="fa-solid fa-clock mr-2"></i>Giờ đi <span class="text-red-500">*</span></label>
+            <input required type="time" class="input_order" />
           </div>
 
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-user mr-2"></i>Họ tên</label>
+              ><i class="fa-solid fa-user mr-2"></i>Họ tên <span class="text-red-500">*</span></label>
             <input
+              required
               type="text"
               class="input_order"
               placeholder="Tên khách hàng"
@@ -269,11 +280,22 @@
 
           <div class="space-y-2">
             <label class="text-sm font-semibold"
-              ><i class="fa-solid fa-phone mr-2"></i>Số điện thoại</label>
-            <input type="tel" class="input_order" placeholder="Số liên hệ" />
+              ><i class="fa-solid fa-phone mr-2"></i>Số điện thoại <span class="text-red-500">*</span></label>
+            <input required id="phoneNum" type="tel" class="input_order" placeholder="Số liên hệ" />
           </div>
 
-          <button class="hero-btn md:col-span-2 mt-4">
+          <div class="space-y-2">
+            <label class="text-sm font-semibold">
+              <i class="fa-solid fa-car mr-2"></i>Màu xe mong muốn </label>
+            <select class="input_order ">
+              <option value="black">Đen</option>
+              <option value="red">Đỏ</option>
+              <option value="gray">Xám</option>
+              <option value="yellow">Vàng</option>
+            </select>
+          </div>
+
+          <button type="button" class="hero-btn md:col-span-2 mt-4">
             XÁC NHẬN HÀNH TRÌNH
           </button>
         </form>
