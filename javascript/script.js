@@ -75,6 +75,19 @@ function closeForm() {
   document.body.style.overflow = '';
 }
 
+// Show price table
+function showTable(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+  content
+}
+
+function closeTable() {
+  document.getElementById('price-table').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+
 // Carousel
 const track = document.querySelector(".feature-track");
 let cards = Array.from(document.querySelectorAll(".feature-card"));

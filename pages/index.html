@@ -67,12 +67,23 @@
       </div>
 
       <div class="hero-image">
-        <img src="../assets/ảnh 1.jpg" alt="Vinfast Limo" />
+        <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-green-2.jpg" alt="Vinfast Limo" />
       </div>
     </section>
 
     <!-- ================= SERVICES ================= -->
     <section id="services" class="px-6 py-32">
+      <!-- FLOATING BUTTON -->
+      <div class="floating-btn">
+        <div class="phone-btn">
+        <a href="tel:0900000000" class="phone-vr" title="Tư vấn ngay"><i class="fa-solid fa-phone"></i></a>
+      </div>
+      <div class="zalo-btn">
+        <a href="https://zalo.me/0900000000" class="zalo-vr" title="Liên hệ Zalo"> 
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo"></a>
+      </div>
+      </div>
+      
       <div class="max-w-7xl mx-auto text-center mb-20">
         <h2 class="text-5xl font-black mb-4 text-primary">Ưu điểm</h2>
         <p class="text-sub text-lg">
@@ -131,63 +142,70 @@
         </div>
         <div class="text-center">
           <h2 class="text-5xl font-black mb-4">
-            Dịch vụ <span class="text-primary">đặt xe</span>
+            Dịch vụ <span class="text-primary">thuê xe</span>
           </h2>
           <p class="text-sub text-lg">Xe luôn sẵn sàng, tài xế tận tâm, chu đáo. An Toàn trong suốt chuyến đi.</p>
         </div>
-        <div class="service-item right reveal-x-right car-grid booking-grid">
+        <!-- PRICE BUTTON -->
+        <button class="price-btn" onclick="showTable('price-table')">
+              BẢNG GIÁ
+        </button>
+
+        <div class="service-item ">
           <button onclick="showForm('booking')">
             <div class="service-card">
-              <img src="../assets/silver.png" />
+              <img src="https://cdn.baohatinh.vn/images/a3c3178e943521c56475fd02a2c76452ae6f03b50136c43cbb4e74f25d5b628a41f223de23b24ca6aa5fceb6eeab1c3e/a1.jpg" />
               <div class="service-content">
-                <h3>Limo Green - <span style="color: gray;">Bạc</span></h3>
+                <h3>Thuê Xe Liên Tỉnh</h3>
                 <p>Đi du lịch cùng gia đình.</p>
               </div>
             </div>
           </button>
           <button onclick="showForm('booking')">
             <div class="service-card">
-              <img src="../assets/gold.jpg" />
+              <img src="https://gialainews.com/wp-content/uploads/2025/07/Limo-Green-Mau-MPV-7-cho-dau-tien-cua-VinFast.jpg" />
               <div class="service-content">
-                <h3>Limo Green - <span style="color: yellow;">Vàng</span></h3>
-                <p>Đi sân bay, tiện nghi, thoải mái.</p>
+                <h3>Thuê Xe Nội Thành</h3>
+                <p>Chủ động lịch trình, linh hoạt và tiện lợi.</p>
               </div>
             </div>
           </button>
         </div>
         <div class="text-center">
           <h2 class="text-5xl font-black mb-4">
-            Dịch vụ <span class="text-primary">thuê xe</span>
+            Dịch vụ <span class="text-primary">đặt xe</span>
           </h2>
           <p class="text-sub text-lg">Thuê xe theo NGÀY, THÁNG, NĂM. Thủ tục đơn giản, nhanh chóng.</p>
         </div>
+
+        <!-- PRICE BUTTON -->
+        <button class="price-btn" onclick="showTable('price-table')">
+              BẢNG GIÁ
+        </button>
+
         <div class="service-item left reveal-x-left car-grid">
           <div class="service-card">
-            <img src="../assets/silver.png" />
+            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-bac-1110x581.png" />
             <div class="service-content">
               <h3>Limo Green - <span style="color: gray;">Bạc</span></h3>
-              <p>Đi du lịch cùng gia đình.</p>
             </div>
           </div>
           <div class="service-card">
-            <img src="../assets/gold.jpg" />
+            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-vang-1110x581.png" />
             <div class="service-content">
-              <h3>Limo Green - <span style="color: yellow;">Vàng</span></h3>
-              <p>Đi sân bay, tiện nghi, thoải mái.</p>
+              <h3>Limo Green - <span style="color: rgb(206, 206, 3);">Vàng</span></h3>
             </div>
           </div>
           <div class="service-card">
-            <img src="../assets/red.jpg" />
+            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-do-1110x581.png" />
             <div class="service-content">
               <h3>Limo Green - <span style="color: red;">Đỏ</span></h3>
-              <p>Hội nghị, cưới hỏi.</p>
             </div>
           </div>
           <div class="service-card">
-            <img src="../assets/black.jpg" />
+            <img src="https://vinfastotominhdao.vn/wp-content/uploads/Limo-Green-mau-den-1110x581.png" />
             <div class="service-content">
               <h3>Limo Green - <span>Đen</span></h3>
-              <p>Trải nghiệm trước khi mua xe.</p>
             </div>
           </div>
         </div>
@@ -262,6 +280,123 @@
       </div>
     </div>
 
+    <!-- ================= PRICE-TABLE ================= -->
+    <div id="price-table" class="modal">
+      <div class="modal-overlay" onclick="closeTable()"></div>
+
+        <div class="modal-content price form-container-flat p-12">
+          <button class="modal-close" onclick="closeTable()">✕</button>
+          <h2 class="text-4xl font-black text-center mb-12">Thông Tin Bảng Giá</h2>
+          <div class="overflow-x-auto rounded-2xl border border-[var(--border)]">
+          <table class="min-w-full text-sm bg-[var(--card)] text-center">
+
+            <!-- ===== THUÊ XE LIÊN TỈNH ===== -->
+            <thead>
+              <tr class="bg-[var(--primary)] text-white">
+                <th colspan="5" class="px-4 py-3 text-left font-bold text-base">
+                  Thuê Xe Liên Tỉnh
+                </th>
+              </tr>
+              <tr class="bg-[var(--primary-light)] text-black font-semibold">
+                <th class="px-3 py-2 text-left">Hành trình</th>
+                <th class="px-3 py-2">Km</th>
+                <th class="px-3 py-2">1 ngày</th>
+                <th class="px-3 py-2">2 ngày</th>
+                <th class="px-3 py-2">Trên 2 ngày</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">Cà Mau</td>
+                <td>~150</td>
+                <td>600k</td>
+                <td>1.100k</td>
+                <td rowspan="3" class="px-3 py-2 text-left font-medium italic text-center">
+                  Liên hệ để báo giá tốt nhất
+                </td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">Hậu Giang</td>
+                <td>~40</td>
+                <td>230k</td>
+                <td>400k</td> 
+              </tr>
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">Vĩnh Long</td>
+                <td>~65</td>
+                <td>300k</td>
+                <td>550k</td>
+              </tr>
+            </tbody>
+
+            <!-- ===== THUÊ XE NỘI THÀNH ===== -->
+            <thead>
+              <tr class="bg-[var(--primary)] text-white">
+                <th colspan="5" class="px-4 py-3 text-left font-bold text-base">
+                  Thuê Xe Nội Thành
+                </th>
+              </tr>
+              <tr class=" bg-[var(--primary-light)] text-black font-semibold">
+                <th class="px-3 py-2 text-left">Quãng đường</th>
+                <th class="px-3 py-2">1 ngày</th>
+                <th class="px-3 py-2">2 ngày</th>
+                <th colspan="2" class="px-3 py-2">Trên 2 ngày</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">Dưới 50km</td>
+                <td>380k</td>
+                <td>700k</td>
+                <td rowspan="3" colspan="4" class="px-3 py-2 text-left font-medium italic text-center">
+                  Liên hệ để báo giá tốt nhất
+                </td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">Dưới 100km</td>
+                <td>450k</td>
+                <td>800k</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">Trên 100km</td>
+                <td>550k</td>
+                <td>900k</td>
+              </tr>
+            </tbody>
+
+            <!-- ĐẶT XE-->
+            <thead>
+              <tr class="bg-[var(--primary)] text-white">
+                <th colspan="5" class="px-4 py-3 text-left font-bold text-base">
+                  Đặt Xe
+                </th>
+              </tr>
+              <tr class=" bg-[var(--primary-light)] text-black font-semibold">
+                <th class="px-3 py-2 text-left">Cước phí</th>
+                <th class="px-3 py-2">Giá cước tối thiểu 2km đầu tiên</th>
+                <th class="px-3 py-2">Giá cước mỗi km tiếp theo</th>
+                <th colspan="2" class="px-3 py-2">Giá cước tính theo thời gian di chuyển (sau 2km đầu tiên)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">1 chiều</td>
+                <td>12.000đ</td>
+                <td>3.800đ/km</td>
+                <td colspan="2" class="text-center">350đ/phút</td>
+              </tr>
+
+              <tr>
+                <td class="px-3 py-2 text-left font-medium">2 chiều</td>
+                <td>10.000đ</td>
+                <td>2.800đ/km</td>
+                <td colspan="2" class="text-center">300đ/phút</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>   
+    </div>   
     <!-- ================= FOOTER ================= -->
     <footer id="contact" class="px-6 pt-24 pb-12">
       <div class="max-w-7xl mx-auto footer-flat rounded-[2.5rem] p-12">

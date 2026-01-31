@@ -69,6 +69,48 @@ body {
   z-index: -1;
 }
 
+/* ================= FLOATING BUTTON ================= */
+.floating-btn{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  right: 10px;
+  bottom: 100px;
+  gap: 30px;
+
+}
+
+.phone-btn, .zalo-btn{
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: tranform 0.3s ease;
+}
+
+.phone-btn:hover,
+ .zalo-btn:hover{
+  transform: scale(1.1);
+  color: var(--text-title);
+}
+
+.phone-btn{
+  color: var(--text-title);
+  background-color: var(--primary);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10px 14px;
+}
+
+.zalo-btn{
+  background: #4aa3ff;
+}
+
+.zalo-btn img{
+  width: 50px;
+  height: 50px;
+}
+
+
 /* ================= NAV ================= */
 .nav-link {
   position: relative;
@@ -168,7 +210,7 @@ body {
 }
 
 /* ================= BUTTON ================= */
-.hero-btn {
+.hero-btn , .price-btn{
   display: inline-block;
   padding: 18px 48px;
   border-radius: 1.5rem;
@@ -180,12 +222,13 @@ body {
   box-shadow: 0 10px 20px rgba(57, 68, 8, 0.3);
 }
 
-.hero-btn:hover {
+.hero-btn:hover,
+.price-btn:hover {
   transform: translateY(-3px) scale(1.1);
   box-shadow: 0 20px 40px rgba(96, 145, 17, 0.5);
 }
 
-.hero-btn::before {
+.hero-btn::before{
   content: "";
   position: absolute;
   inset: 0;
@@ -199,6 +242,7 @@ body {
   transition: left 0.6s;
 }
 
+.price-btn:hover::before,
 .hero-btn:hover::before {
   left: 100%;
 }
@@ -254,17 +298,11 @@ body {
   line-height: 1.6;
 }
 
-.service-item.left {
-  justify-content: flex-start;
-}
-
-.service-item.right {
-  justify-content: flex-end;
-}
-
 .service-item {
   display: flex;
   width: 100%;
+  gap: 10px;
+  justify-content: space-evenly;
 }
 
 .car-grid {
@@ -286,19 +324,28 @@ body {
   width: 100%;
   margin: 0;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.service-card:hover{
+  transform: scale(1.1);
+  z-index: 10;
 }
 
 /* ảnh gọn lại */
 .service-item .service-card img {
   width: 100%;
-  height: 260px;
+  height: auto;
+  max-height: 240px;
   border-radius: 1.8rem;
   object-fit: cover;
+
 }
 
 /* content không dồn */
 .service-item .service-content {
   padding: 0;
+  text-align: center;
 }
 
 /* ================= FORM ================= */
@@ -314,6 +361,7 @@ body {
   background: rgba(62, 59, 59, 0.236);
   color: var(--primary-text-form);
   outline: none;
+  object-fit: cover;
 }
 
 .input_order::placeholder {
@@ -335,6 +383,10 @@ body {
   visibility: hidden;
   pointer-events: none;
   transition: 0.35s ease;
+}
+
+.price{
+  background-color: white;
 }
 
 .modal.active {
@@ -395,7 +447,7 @@ body {
 .services-zigzag {
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 100px;
 }
 
 /* Carousel */
@@ -477,7 +529,7 @@ body {
 }
 
 .feature-card {
-  flex: 0 0 calc((100% - 48px) / 3);
+  flex: 0 0 calc((100% - 30px) / 3);
   background: var(--card);
   border-radius: 1.75rem;
   padding: 2.5rem 2rem;
@@ -529,6 +581,10 @@ body {
     gap: 20px;
   }
 
+  .service-item{
+    flex-direction: column;
+  }
+
   .car-grid .service-card {
     padding: 16px;
     border-radius: 20px;
@@ -537,7 +593,8 @@ body {
 
   .car-grid .service-card img {
     width: 100%;
-    height: 180px;
+    height: auto;
+    min-height: 180px;
     border-radius: 14px;
     object-fit: cover;
   }
