@@ -1,4 +1,9 @@
+import * as Data from './javascript/config';
+
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.owner').forEach(el => {
+    el.textContent = Data.name;
+  });
 
     const toggle = document.getElementById('themeToggle');
     const circle = document.getElementById('themeCircle');
