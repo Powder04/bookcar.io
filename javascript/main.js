@@ -18,6 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".zalo-vr").href = `https://zalo.me/${Data.ZALO_PHONE}`;
   document.querySelector(".phone_display").innerHTML = formatPhoneDisplay(Data.PHONE);
 
+  //chen img 
+  document.getElementById("lienTinh-img").src = Data.IMAGES.lienTinh;
+  document.getElementById("noiThanh-img").src = Data.IMAGES.noiThanh;
+  document.getElementById("the1-img").src = Data.IMAGES.the1;
+  document.getElementById("the2-img").src = Data.IMAGES.the2;
+  document.getElementById("the3-img").src = Data.IMAGES.the3;
+  document.getElementById("the4-img").src = Data.IMAGES.the4;
+
   initTheme();
   initAnimation();
   initCarousel();
